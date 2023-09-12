@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     autoplay: {
       delay: 3000,//Интервал ожидания
         disableOnInteraction: false,      
-    }, */
+    },*/ 
 
     pagination: {
       el: ".slider__section .slider-pagination",
