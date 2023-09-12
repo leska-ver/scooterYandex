@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+  
+
   //Слайдер Каталог
   const swiperOb = document.querySelector(".evenemang")// Для обёртки if
   if (swiperOb) { // Обёртка if. Спасение Gulp-а от null в браузере
@@ -60,31 +62,22 @@ document.addEventListener('DOMContentLoaded', function() {
           rows: 2
         },
         spaceBetween: 20
-      },
-      
-      2400: {
-        slidesPerView: 2,
-        grid: {
-          rows: 2
-        },
-        spaceBetween: 30
       }
     },
   
     a11y: false
-  
-    // on: {
-    //   /* исправляет баг с margin-top остающимся при смене брейкпоинта, это было нужно в 6-й версии свайпера */
-    //   beforeResize: function () {
-    //     this.slides.forEach((el) => {
-    //       el.style.marginTop = "";
-    //     });
-    //   }
-    // }
   });
+
+
+
 
 
   }; //Обёртка if
 
 
 });
+
+
+
+
+

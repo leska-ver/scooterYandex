@@ -30,6 +30,7 @@
   --color-graySolid: #808080;
   --color-alto: #dedede;
   --color-brightSun: #ffde40;
+  --color-silver: #c5c5c5;
 }
 
 html {
@@ -116,7 +117,7 @@ button {
   border-radius: 36px;
   border: 1px solid transparent;
   box-shadow: 0px 4px 98px 0px rgba(255, 222, 64, 0.59);
-  width: max-content;
+  width: 322px;
   font-weight: 500;
   line-height: 22px; /* 91.667% */;
   background: var(--color-brightSun);
@@ -160,7 +161,7 @@ button {
 
 .container {
   margin: 0 auto;
-  padding: 0 50px 0 80px;
+  padding: 0 50px;
   /*1075px = 975px + 50px + 50px не менять*/
   max-width: 1075px;
 }
@@ -178,8 +179,8 @@ button {
 }
 
 /*Общие кнопки навигации СЛАйДЕРА*/
-.slider-navigation {
-  display: none;   
+.slides-container {/*Включает слайдер*/
+  overflow: hidden;
 }
 
 .slider-btn {
@@ -213,7 +214,7 @@ button {
 
 /***Шапка header-1920px***/
 .header {
-  padding: 125px 0 65px;  
+  padding: 125px 0 38px;  
   background: linear-gradient(0deg, rgba(255, 255, 255, 2.95) 0%, rgba(255, 255, 255, 0.82) 100%), linear-gradient(90deg, #FF5C4D 0%, #EB469F 25%, #8341EF 72%, #3F68F9 100%);
 }
 
@@ -221,15 +222,20 @@ button {
   position: relative;
 }
 
-.header__samokatImg {
+.header__container::before {
   content: "";
   position: absolute;
-  right: -115px;
+  right: 17px;
+  margin-left: auto;
   bottom: -105px;
-  width: 968px;
+  width: 82%;
   height: 854px;
-  background: url("../img/header-img1440px.png") center / contain no-repeat;
-} 
+  background: url("../img/header-img1440px.png") center / cover no-repeat;
+}
+
+ .header__samokatImg {
+  display: none;
+}  
 
 .header__logo {
   position: relative;
@@ -259,7 +265,7 @@ button {
 
 .header__title {
   position: relative;
-  margin: 47px 0 32px;
+  margin: 47px 0 28px;
   width: 420px;
   font-size: 72px;
   letter-spacing: -1.44px;
@@ -268,15 +274,15 @@ button {
 
 .header__desc {
   position: relative;
-  margin-bottom: 34px;
+  margin-bottom: 38px;
   width: 420px;
   z-index: 1;
 }
 
 .header__span {
   position: relative;
-  top: 6px;
-  padding: 8px 12px 7px 90px;
+  top: -3px;
+  padding: 7px 12px 7px 90px;
   border-radius: 500px;
   border: 1px solid transparent;
   font-size: 16px;
@@ -308,7 +314,7 @@ button {
 
 /*** Вот что даёт участие в клубе hero-1920px***/
 .hero {
-  padding: 14px 0;
+  padding: 38px 0 21px;
   /*Скроет у .header градиент*/
   margin-top: -1px;
   background-color: var(--color-white);
@@ -321,11 +327,9 @@ button {
 
 .hero__list {
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-columns: 39% 42%;
-  gap: 32px 104px;
-  margin-bottom: 26px;
+  display: grid;  
+  grid-template-columns: repeat(2, 37%);
+  gap: 35px 76px;
 }
 
 .hero__img {
@@ -348,12 +352,14 @@ button {
 }
 
 .hero__img_three {
+  margin-bottom: 0;
   background-image: url("../img/hero-img/03.png");
   width: 86px;
   height: 86px;
 }
 
 .hero__img_four {
+  margin-bottom: 0;
   background-image: url("../img/hero-img/04.png");
   width: 84px;
   height: 84px;
@@ -368,34 +374,41 @@ button {
 
 /*** Эксклюзивный доступ к событиям Самокатов evenemang-1920px***/
 .evenemang {
-  padding: 15px 0;
+  padding: 38px 0 22px;
 }
 
 .evenemang__title {
-  margin-bottom: 0;
+  margin-bottom: 34px;
   width: 595px;
   font-size: 48px;
   letter-spacing: -0.96px;
 }
 
 .evenemang__desc {
-  margin-bottom: 68px;
+  margin-bottom: 73px;
   width: 440px;
+  line-height: 120%;
+}
+
+.evenemang__decstop {
+  margin-left: -5px;
+}
+
+.evenemang__mobili {
+  display: none;
 }
 
 .evenemang__list {
   position: relative;
-  /* display: flex;
-  flex-wrap: wrap;   */
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex; 
+  flex-wrap: wrap;  
 }
 
 .evenemang__item {
-  margin-right: 22px;
-  margin-bottom: 28px;
-  width: 450px;
-  height: 450px;
+  margin-right: 31px;
+  margin-bottom: 24px;
+  width: 456px;
+  height: 455px;
 }
 
 .evenemang__item:nth-child(3) {
@@ -425,19 +438,19 @@ button {
 }
 
 .evenemang__before_one {
-  top: 5px;
-  left: -170px;
+  top: 9px;
+  left: -163px;
   background-image: url("../img/evenemang-img/evenemangBefore-01.png");
 }
 
 .evenemang__before_two {
-  top: -302px;
-  right: -86px;
+  top: -298px;
+  right: 50px;
   background-image: url("../img/evenemang-img/evenemangBefore-02.png");
 }
 
 .evenemang__before_three {
-  right: -45px;
+  right: 86px;
   bottom: 129px;
   background-image: url("../img/evenemang-img/evenemangBefore-03.png");
 }
@@ -453,9 +466,119 @@ button {
 /*** // Эксклюзивный доступ к событиям Самокатов evenemang-1920px***/
 
 
+/*** Абонемент info-1920px***/
+.info {
+  padding: 22px 0 47.5px;
+}
+
+.info__container {
+  position: relative;
+}
+
+.info__container::before, .info__container::after {
+  content: "";
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}  
+
+.info__container::before {
+  top: -224px;
+  right: -48px;
+  width: 869px;
+  height: 869px;
+  background-image: url("../img/info-img/scooter-plus.png");
+}
+
+.info__container::after {
+  left: -212px;
+  bottom: -159px;
+  width: 789px;
+  height: 789px;
+  background-image: url("../img/info-img/scooter-1440px.png");
+}
+
+.info__img {
+  display: none;
+  margin: 0 auto;
+  width: 520px;
+  height: 534px;
+  background: url("../img/info-img/scooter-375px.png") center / cover no-repeat;
+}
+
+.info__block {
+  position: relative;
+  width: 419px;
+  z-index: 1;
+}
+
+.info__block_left {
+  margin-bottom: 116px;
+}
+
+.info__title {
+  margin-bottom: 35px;
+  padding-right: 38px;
+  font-size: 48px;
+  letter-spacing: -0.96px;
+}
+
+.info__desc {
+  line-height: 120%; /* 28.8px */
+}
+
+.info__block_right {
+  margin: 0 185px 40px auto;
+}
+
+.info__block_right .info__title {
+  padding-right: 35px;
+}
+
+.info__button {
+  display: block;
+  margin-left: 44%;
+  width: 281px;
+  padding: 22px 46px;
+}
+/*** // Абонемент info-1920px***/
+
+
+/*** Подвал footer-1920px***/
+.footer {
+  padding: 48.5px 0 20px;
+}
+
+.footer__desc {
+  width: 84%;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 120%;
+  color: var(--color-silver);
+  text-decoration-line: underline;
+}
+/*** // Подвал footer-1920px***/
+
+
+@media (max-width: 1500px) {
+  .container {
+    /*Не по правилу. дизайн кривой. Ради PerfectPixel нарушила дрей-скот*/
+    margin: 0 50px 0 auto;
+    max-width: 1179px;
+  }
+}
+
 @media (max-width: 1280px) {
+  .container {
+    margin: 0 auto;
+    padding: 0 50px;
+    /*1040px = 940px + 50px + 50px не менять. Это реальная ширина макета*/
+    max-width: 1040px;
+  }
+
   /***Шапка header-1280px***/
-  .header__samokatImg {
+  .header__container::before {
     top: -131px;
     right: 0;
     bottom: 0;
@@ -467,6 +590,18 @@ button {
 
 
   /*** Эксклюзивный доступ к событиям Самокатов evenemang-1280px***/
+  .evenemang__decstop  {
+    display: none;
+  }
+
+  .evenemang__mobili  {
+    display: block;
+  }
+
+  .evenemang__slides {
+    margin-bottom: 24px;
+  }
+
   .evenemang__before {
     display: none;
   }
@@ -488,18 +623,29 @@ button {
   .evenemang__img {
     transform: rotate(0deg);
   }
-
-  /**slider**/
-  .slides-container {/*Включает слайдер*/
-    overflow: hidden;
-  }
-
-  .evenemang__navigation {
-    /*none в .slider-navigation*/
-    display: block;   
-  }
-  /** // slider**/
   /*** // Эксклюзивный доступ к событиям Самокатов evenemang-1280px***/
+
+
+  /*** Абонемент info-1280px***/
+  .info__block_right {
+    margin: 0px 0 40px auto;
+  }
+
+  .info__container::before, .info__container::after {
+    width: 700px;
+    height: 700px;
+  }
+
+  .info__container::before {
+    top: -136px;
+    right: 0;
+  }
+
+  .info__container::after {
+    left: -100px;
+    bottom: -66px;
+  }  
+  /*** // Абонемент info-1280px***/
 }
 
 
@@ -516,12 +662,14 @@ button {
   .header__container {
     padding-top: 0;
   }
+  
+  .header__container::before {
+    display: none;
+  }
 
   .header__samokatImg {
-    position: relative;
-    top: 0;
+    display: block;
     margin: 0 auto;
-    width: 575px;
     height: 500px;
     background: url("../img/header-img375px.png") center / contain no-repeat;    
   }
@@ -553,9 +701,35 @@ button {
   }  
   /*** Вот что даёт участие в клубе hero-969px***/
 
+
+  /*** Эксклюзивный доступ к событиям Самокатов evenemang-969px***/
   .evenemang__title {
     width: 100%;
   }
+  /*** //Эксклюзивный доступ к событиям Самокатов evenemang-969px***/
+
+
+  /*** Абонемент info-969px***/
+  .info__block {
+    width: 100%;
+  }
+
+  .info__block_left {
+    margin-bottom: 55px;
+  }
+
+  .info__container::before, .info__container::after {
+    display: none;
+  }
+
+  .info__img {
+    display: block;
+  }
+
+  .info__button {
+    margin: 0 auto;
+  }
+  /*** // Абонемент info-969px***/
 }
 
 
@@ -584,7 +758,7 @@ button {
   }  
 
   .header__desc {
-    margin-bottom: 42px;
+    margin-bottom: -3px;
     width: 100%;
   }
 
@@ -617,8 +791,8 @@ button {
 
   /*** Вот что даёт участие в клубе hero-585px***/
   .hero {
-    padding: 1px;
-    margin-top: -69px;
+    margin-top: -22px;
+    padding: 0 0 20px;
   }  
 
   .hero__title {
@@ -662,9 +836,106 @@ button {
   }
   /*** Вот что даёт участие в клубе hero-585px***/
 
+
+  /*** Эксклюзивный доступ к событиям Самокатов evenemang-585px***/
+  .evenemang {
+    padding: 20px 0 19px;
+  }
+
+  .evenemang__title {
+    margin: 23px 0;
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
+
   .evenemang__desc {
     width: 100%;
+    font-size: 16px;
+    line-height: 120%;
   }
+
+  .evenemang__slides {
+    margin-bottom: 27px;
+  }
+
+  .evenemang__btn {
+    padding: 10px;
+  }
+
+  .evenemang__navigation .slider-btn_prev {
+    margin-right: 7px;
+  }  
+
+  .evenemang__item {
+    position: relative;
+  }
+
+  .evenemang__item:first-child::before {
+    content: "";
+    position: absolute;
+    top: -23px;
+    right: -4px;
+    width: 125px;
+    height: 125px;
+    background: url(../img/evenemang-img/evenemangBefore-02-375px.png) center / cover no-repeat;
+    z-index: 10;
+  }
+
+  .evenemang__item:nth-child(3) {
+    order: 0;
+  }
+  /*** // Эксклюзивный доступ к событиям Самокатов evenemang-585px***/
+
+
+  /*** Абонемент info-585px***/
+  .info {
+    padding: 19px 0 30px;
+  }
+
+  .info__title {
+    margin-bottom: 23px;
+    padding-right: 0;
+    font-size: 32px;
+    letter-spacing: -0.64px;
+  }
+
+  .info__desc {
+    font-size: 16px;
+  }
+
+  .info__block_left {
+    margin-bottom: 5px;
+  }
+  
+  .info__img {
+    margin: -17px auto 0;
+    width: 100%;
+    height: 436px;
+  }
+
+  .info__block_right {
+    margin: -95px 0 28px;
+  }
+
+  .info__button {
+    margin: 0;
+    padding: 13px 36px;
+    width: 100%;
+    font-size: 18px;
+  }
+  /*** // Абонемент info-585px***/
+
+
+  /*** Подвал footer-585px***/
+  .footer {
+    padding: 30px 0 20px;
+  }
+
+  .footer__desc {
+    width: 100%;
+    font-size: 10px;
+  }
+  /*** // Подвал footer-585px***/
 }
 
 
@@ -673,20 +944,11 @@ button {
     padding: 0 15px;
   }
 
-  .header__desc {
-    margin-bottom: 2px;
-  }
-
   .header__samokatImg {
-    top: 0;
     margin-left: 0;
-    width: 100%;
     height: 280px;
   }
 }  
-
-
-
 
 
 
