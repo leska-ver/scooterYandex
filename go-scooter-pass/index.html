@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--закрасить адресную строку и строку уведомлений в любой цвет.-->
+  <meta name="theme-color" content="#1f1f1f">
+  <!--Для поиска в сети-->
+  <meta name="description" content="Рады видеть Вас на своём сайте.">
+  <meta property="og:title" content="Клуб Самокатов.">
+  <meta property="og:type" content="website">
+  <!-- здесь ссылка на сайт-->
+  <meta property="og:url" content="ссылка на сайт">
+  <!-- <meta property="og:image" content="картинка для поисковиков ссылка"> -->
+  <meta property="og:image" content="картинка">
+  <meta name="keywords" content="заказ, заказать, клуб, самокат, любители, лендинг">
+  <!-- // Для поиска в сети-->
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <title>Клуб "Самокатов"</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1 class="visually-hidden">Я для семантики</h1>
+    <header class="header">
+      <div class="header__container container">
+        <a href="#" class="header__logo">
+          <img class="header__logo-img" src="img/logo.svg" alt="Логотип Яндекс Go"/>  
+        </a>
+        <h2 class="header__title h2">
+          Вступайте в клуб Самокатов
+        </h2>
+        <p class="header__desc desc">
+          Купите абонемент, чтобы стать частью клуба в&nbsp;новом сезоне&mdash;2024. 8&nbsp;месяцев&nbsp;за <span class="header__span">3190 ₽</span>
+        </p>
+        <a class="header__button btn" href="#">
+          Стать частью клуба
+        </a>
+        <div class="header__samokatImg"></div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero__container container">
+          <h2 class="hero__title h2">
+            Вот что даёт участие в клубе
+          </h2>
+          <ul class="hero__list">
+            <li class="hero__item">
+              <div class="hero__img hero__img_one"></div>
+              <p class="hero__desc desc">
+                0&nbsp;₽ за&nbsp;старт в&nbsp;каждой поездке
+              </p>
+            </li>
+            <li class="hero__item">
+              <div class="hero__img hero__img_two"></div>
+              <p class="hero__desc desc">
+                Катаетесь с&nbsp;друзьями? Бронируйте до&nbsp;трёх самокатов с&nbsp;аккаунта с&nbsp;абонементом&nbsp;&mdash; так у&nbsp;всех будет бесплатный старт
+              </p>
+            </li>
+            <li class="hero__item">
+              <div class="hero__img hero__img_three"></div>
+              <p class="hero__desc desc">
+                Бесплатная пауза 15&nbsp;минут в&nbsp;поездке&nbsp;&mdash; например, чтобы зайти за&nbsp;кофе или передохнуть
+              </p>
+            </li>
+            <li class="hero__item">
+              <div class="hero__img hero__img_four"></div>
+              <p class="hero__desc desc">
+                Если самокат недостаточно заряжен или с&nbsp;ним неудобно переходить дорогу, замените по&nbsp;пути на&nbsp;другой&nbsp;&mdash; это бесплатно
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section class="evenemang">
+        <div class="evenemang__container container">
+          <h2 class="evenemang__title h2">
+            Эксклюзивный доступ к событиям Самокатов
+          </h2>
+          <p class="evenemang__desc desc">
+            С&nbsp;абонементом&nbsp;&mdash; у&nbsp;вас доступ к&nbsp;специальным мероприятиям, скидки и&nbsp;классный мерч. В&nbsp;2023 году мы&nbsp;танцевали на&nbsp;Даче Плюс с&nbsp;Антохой&nbsp;MC, катались на&nbsp;самокатах с&nbsp;Сергеем Мезенцевым и&nbsp;слушали хор Attaque de&nbsp;Panique
+          </p>
+          <!-- <div class="slider__swiper"> -->
+            <div class="evenemang__slides slides-container">
+              <ul class="evenemang__list swiper-wrapper">
+                <li class="evenemang__item swiper-slide">
+                  <span class="evenemang__before evenemang__before_one"></span>
+                  <img class="evenemang__img" src="img/evenemang-img/evenemang-01.jpg" alt="Фото-1"/>
+                </li>
+                <li class="evenemang__item swiper-slide">
+                  <span class="evenemang__before evenemang__before_two"></span>
+                  <img class="evenemang__img" src="img/evenemang-img/evenemang-02.jpg" alt="Фото-2"/>
+                </li>
+                <li class="evenemang__item swiper-slide">
+                  <span class="evenemang__before evenemang__before_three"></span>
+                  <img class="evenemang__img" src="img/evenemang-img/evenemang-03.jpg" alt="Фото-3"/>
+                </li>
+                <li class="evenemang__item swiper-slide">
+                  <span class="evenemang__before evenemang__before_four"></span>
+                  <img class="evenemang__img" src="img/evenemang-img/evenemang-04.jpg" alt="Фото-4"/>
+                </li>                                    
+              </ul>
+            </div>
+            <div class="evenemang__navigation slider-navigation">
+              <button class="evenemang__btn slider-btn slider-btn_prev" aria-label="К следующему слайду">
+                <svg width="27" height="24" viewbox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.25 10.5C1.42157 10.5 0.75 11.1716 0.75 12C0.75 12.8284 1.42157 13.5 2.25 13.5L2.25 10.5ZM25.8107 13.0607C26.3964 12.4749 26.3964 11.5251 25.8107 10.9393L16.2647 1.3934C15.6789 0.80761 14.7292 0.80761 14.1434 1.3934C13.5576 1.97918 13.5576 2.92893 14.1434 3.51472L22.6287 12L14.1434 20.4853C13.5576 21.0711 13.5576 22.0208 14.1434 22.6066C14.7292 23.1924 15.6789 23.1924 16.2647 22.6066L25.8107 13.0607ZM2.25 13.5L24.75 13.5L24.75 10.5L2.25 10.5L2.25 13.5Z" fill="#21201F"/>
+</svg>
+              </button>
+              <button class="evenemang__btn slider-btn slider-btn_next" aria-label="К следующему слайду">
+                <svg width="27" height="24" viewbox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.25 10.5C1.42157 10.5 0.75 11.1716 0.75 12C0.75 12.8284 1.42157 13.5 2.25 13.5L2.25 10.5ZM25.8107 13.0607C26.3964 12.4749 26.3964 11.5251 25.8107 10.9393L16.2647 1.3934C15.6789 0.80761 14.7292 0.80761 14.1434 1.3934C13.5576 1.97918 13.5576 2.92893 14.1434 3.51472L22.6287 12L14.1434 20.4853C13.5576 21.0711 13.5576 22.0208 14.1434 22.6066C14.7292 23.1924 15.6789 23.1924 16.2647 22.6066L25.8107 13.0607ZM2.25 13.5L24.75 13.5L24.75 10.5L2.25 10.5L2.25 13.5Z" fill="#21201F"/>
+</svg>
+              </button>
+            </div>
+          <!-- </div> -->
+
+
+
+        </div>
+      </section>    
+    </main>
+    <footer class="footer">
+      <div class="footer__container container"></div>
+    </footer>
+  </div><!-- wrapper -->
+
+  
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+
+  <!-- Мои -->
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,693 @@
+@font-face {
+  font-family: 'Text';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/text-medium.woff2') format('woff2'), url('../fonts/text-medium.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Text';
+  font-style: normal;
+  font-weight: 900;
+  src: url('../fonts/text-black.woff2') format('woff2'), url('../fonts/text-black..woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Text';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/text-regular.woff2') format('woff2'), url('../fonts/text-regular.woff') format('woff');
+  font-display: swap;
+}
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-tuatara: #21201f;
+  --color-mauve: #e0b8ff;
+  --color-graySolid: #808080;
+  --color-alto: #dedede;
+  --color-brightSun: #ffde40;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*, 
+*::before, 
+*::after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -o-box-sizing: inherit;
+  -ms-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html,
+body {
+  /*Для .wrapper Это будет нужно для footer*/
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100%;
+  font-family: 'Text', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 2;
+  color: var(--color-tuatara);
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+img, svg {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*a:visited {
+  color: #84aaad; Цвет посещенных ссылок 
+}*/
+
+h1,
+h2,
+h3,
+p,
+a {
+  /*перенос слов*/
+  word-wrap: break-word;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  background-color: transparent;  
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 24px 48px;
+  display: inline-block;
+  border-radius: 36px;
+  border: 1px solid transparent;
+  box-shadow: 0px 4px 98px 0px rgba(255, 222, 64, 0.59);
+  width: max-content;
+  font-weight: 500;
+  line-height: 22px; /* 91.667% */;
+  background: var(--color-brightSun);
+  cursor: pointer;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.btn:focus {
+  outline: none;
+  border: 1px solid #dbb700;
+}
+
+.btn:hover {
+  opacity: .8;
+}
+
+.btn:active {
+  opacity: .6;
+}
+
+.wrapper {    
+  min-height: 100%;
+  /* overflow: hidden; не любить sticky */
+}
+
+/* Для семантики если нет заголовка h1 в вёрстке. Ставим скрытый заголовок. */
+.visually-hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 50px 0 80px;
+  /*1075px = 975px + 50px + 50px не менять*/
+  max-width: 1075px;
+}
+
+.h2 {
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1; /* 56px */
+  letter-spacing: -1.12px;
+}
+
+.desc {
+  font-weight: 500;
+  line-height: 130%; /* 31.2px */
+}
+
+/*Общие кнопки навигации СЛАйДЕРА*/
+.slider-navigation {
+  display: none;   
+}
+
+.slider-btn {
+  position: relative;
+  flex-shrink: 0;
+  background-color: var(--color-brightSun);
+  border: 1px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-transition: opacity .4s ease-in-out;
+  -ms-transition: opacity .4s ease-in-out;
+  -moz-transition: opacity .4s ease-in-out;
+  -o-transition: opacity .4s ease-in-out;
+  transition: opacity .4s ease-in-out;
+}
+
+.slider-btn_prev {
+  margin-right: 10px;
+  transform: rotate(180deg);
+}
+
+.slider-btn:hover {
+  opacity: .7;
+}
+
+.slider-btn:disabled {
+  opacity: .5;
+}
+/* // Общие кнопки навигации СЛАйДЕРА*/
+
+
+/***Шапка header-1920px***/
+.header {
+  padding: 125px 0 65px;  
+  background: linear-gradient(0deg, rgba(255, 255, 255, 2.95) 0%, rgba(255, 255, 255, 0.82) 100%), linear-gradient(90deg, #FF5C4D 0%, #EB469F 25%, #8341EF 72%, #3F68F9 100%);
+}
+
+.header__container {
+  position: relative;
+}
+
+.header__samokatImg {
+  content: "";
+  position: absolute;
+  right: -115px;
+  bottom: -105px;
+  width: 968px;
+  height: 854px;
+  background: url("../img/header-img1440px.png") center / contain no-repeat;
+} 
+
+.header__logo {
+  position: relative;
+  display: inline-block;
+  width: max-content;
+  cursor: pointer;
+  z-index: 1;
+  -webkit-transition: opacity .3s ease-in-out;
+  -moz-transition: opacity .3s ease-in-out;
+  -ms-transition: opacity .3s ease-in-out;
+  -o-transition: opacity .3s ease-in-out;
+  transition: opacity .3s ease-in-out;
+}
+
+.header__logo:focus {
+  outline: 1px solid var(--color-brightSun);
+  outline-offset: 8px;
+}
+
+.header__logo:hover {
+  opacity: .8;
+}
+
+.header__logo:active {
+  opacity: .6;
+}
+
+.header__title {
+  position: relative;
+  margin: 47px 0 32px;
+  width: 420px;
+  font-size: 72px;
+  letter-spacing: -1.44px;
+  z-index: 1;
+}
+
+.header__desc {
+  position: relative;
+  margin-bottom: 34px;
+  width: 420px;
+  z-index: 1;
+}
+
+.header__span {
+  position: relative;
+  top: 6px;
+  padding: 8px 12px 7px 90px;
+  border-radius: 500px;
+  border: 1px solid transparent;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 120%;/* 19.2px */
+  text-decoration: line-through;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.63) 0%, rgba(255, 255, 255, 0.63) 100%), radial-gradient(141.42% 141.42% at 100% 0%, #E0B8FF 0%, #B6B9FF 100%);
+}
+
+.header__span::before {
+  content: "499 ₽";
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 2px 12px;
+  border-radius: 500px;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;/* 28.8px */
+  color: var(--color-graySolid);
+  background: radial-gradient(141.42% 141.42% at 100% 0%, #E0B8FF 0%, #B6B9FF 100%);
+}
+
+.header__button {
+  padding: 19px 49.5px;
+}
+/*** // Шапка header-1920px***/
+
+
+/*** Вот что даёт участие в клубе hero-1920px***/
+.hero {
+  padding: 14px 0;
+  /*Скроет у .header градиент*/
+  margin-top: -1px;
+  background-color: var(--color-white);
+}
+
+.hero__title {
+  margin-bottom: 40px;
+  width: 610px;
+}
+
+.hero__list {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 39% 42%;
+  gap: 32px 104px;
+  margin-bottom: 26px;
+}
+
+.hero__img {
+  display: inline-block;
+  margin-bottom: 5px;
+  width: 75px;
+  height: 75px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.hero__img_one {
+  background-image: url("../img/hero-img/01.png");
+}
+
+.hero__img_two {
+  background-image: url("../img/hero-img/02.png");
+  width: 95px;
+  height: 80px;
+}
+
+.hero__img_three {
+  background-image: url("../img/hero-img/03.png");
+  width: 86px;
+  height: 86px;
+}
+
+.hero__img_four {
+  background-image: url("../img/hero-img/04.png");
+  width: 84px;
+  height: 84px;
+}
+
+.hero__desc {
+  margin-top: 0;
+  line-height: 120%; /* 28.8px */
+}
+/*** // Вот что даёт участие в клубе hero-1920px***/
+
+
+/*** Эксклюзивный доступ к событиям Самокатов evenemang-1920px***/
+.evenemang {
+  padding: 15px 0;
+}
+
+.evenemang__title {
+  margin-bottom: 0;
+  width: 595px;
+  font-size: 48px;
+  letter-spacing: -0.96px;
+}
+
+.evenemang__desc {
+  margin-bottom: 68px;
+  width: 440px;
+}
+
+.evenemang__list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;  
+}
+
+.evenemang__item {
+  margin-right: 22px;
+  margin-bottom: 28px;
+  width: 450px;
+  height: 450px;
+}
+
+.evenemang__item:nth-child(3) {
+  order: 1;
+}
+
+.evenemang__item:nth-child(2) .evenemang__img, .evenemang__item:nth-child(3) .evenemang__img {
+  margin-top: -212px;
+}
+
+.evenemang__img {
+  width: 100%;
+  height: 100%;
+  border-radius: 64px;
+  background: var(--color-alto);
+  transform: rotate(2deg);
+}
+
+.evenemang__before {
+  position: absolute;
+  display: inline-block;
+  width: 228px;
+  height: 228px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.evenemang__before_one {
+  top: 5px;
+  left: -170px;
+  background-image: url("../img/evenemang-img/evenemangBefore-01.png");
+}
+
+.evenemang__before_two {
+  top: -302px;
+  right: -86px;
+  background-image: url("../img/evenemang-img/evenemangBefore-02.png");
+}
+
+.evenemang__before_three {
+  right: -45px;
+  bottom: 129px;
+  background-image: url("../img/evenemang-img/evenemangBefore-03.png");
+}
+
+.evenemang__btn {
+  padding: 12px;
+}
+
+.evenemang__navigation {  
+  margin: 0 auto;
+  width: max-content;   
+}
+/*** // Эксклюзивный доступ к событиям Самокатов evenemang-1920px***/
+
+
+@media (max-width: 1280px) {
+  /***Шапка header-1280px***/
+  .header__samokatImg {
+    top: -131px;
+    right: 0;
+    bottom: 0;
+    width: 750px;
+    height: 700px;
+    background-size: cover;
+  }
+  /*** // Шапка header-1280px***/
+
+
+  /*** Эксклюзивный доступ к событиям Самокатов evenemang-1280px***/
+  .evenemang__before {
+    display: none;
+  }
+
+  .evenemang__list {
+    flex-wrap: inherit;
+  }
+
+  .evenemang__item {
+    margin-right: 0;
+    margin-bottom: 0;
+    height: 100%;
+  }
+
+  .evenemang__item:nth-child(2) .evenemang__img, .evenemang__item:nth-child(3) .evenemang__img {
+    margin-top: 0;
+  }
+
+  .evenemang__img {
+    transform: rotate(0deg);
+  }
+
+  /**slider**/
+  .slides-container {/*Включает слайдер*/
+    overflow: hidden;
+  }
+
+  .evenemang__navigation {
+    /*none в .slider-navigation*/
+    display: block;   
+  }
+  /** // slider**/
+  /*** // Эксклюзивный доступ к событиям Самокатов evenemang-1280px***/
+}
+
+
+@media (max-width: 969px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  /***Шапка header-969px***/
+  .header {    
+    padding: 75px 0 2px;
+  }
+
+  .header__container {
+    padding-top: 0;
+  }
+
+  .header__samokatImg {
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    width: 575px;
+    height: 500px;
+    background: url("../img/header-img375px.png") center / contain no-repeat;    
+  }
+  /*** // Шапка header-969px***/
+
+
+  /*** Вот что даёт участие в клубе hero-969px***/
+  .hero__title {
+    width: 100%;
+  }
+
+  .hero__list {
+    display: block;
+  }  
+
+  .hero__item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .hero__img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 70px;
+    background-size: cover;
+  }  
+  /*** Вот что даёт участие в клубе hero-969px***/
+
+  .evenemang__title {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 585px) {
+  .desc {
+    font-size: 18px;
+  }
+
+  /***Шапка header-585px***/
+  .header {    
+    padding: 32px 0;
+  }
+
+  .header__container {
+    padding-top: 0;
+  }
+
+  .header__logo {
+    width: 112px;
+  }  
+
+  .header__title {
+    margin: 11px 0 22px;
+    width: 212px;
+    font-size: 37px;
+  }  
+
+  .header__desc {
+    margin-bottom: 42px;
+    width: 100%;
+  }
+
+  .header__span {
+    padding: 5px 4px 2px 58px;
+    font-size: 13px;
+  }  
+
+  .header__span::before {
+    margin-top: -1px;
+    padding: 1px 7px;
+    font-size: 18px;
+  }  
+
+  .header__button {
+    display: none;
+    padding: 20px;
+  }
+
+  .header__samokatImg {
+    width: 350px;
+    height: 306px;
+    top: -47px;
+    margin-left: -25px;  
+  }
+
+
+  /*** // Шапка header-585px***/
+
+
+  /*** Вот что даёт участие в клубе hero-585px***/
+  .hero {
+    padding: 1px;
+    margin-top: -69px;
+  }  
+
+  .hero__title {
+    margin-bottom: 34px;
+    font-size: 32px;
+  }
+
+  .hero__desc {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  .hero__item {
+    gap: 28px;
+  }
+
+  .hero__item:not(:last-child) {
+    margin-bottom: 29px;
+  }
+
+  .hero__img_one {
+    margin-left: 9px;
+  }
+
+  .hero__img_two {
+    margin-top: 13px;
+    width: 78px;
+  }
+
+  .hero__img_three {
+    width: 82px;
+    height: 77px;
+    margin-top: -7px;
+  }
+
+  .hero__img_four {
+    width: 64px;
+    height: 64px;
+    margin-left: 10px;
+    margin-top: -6px;
+  }
+  /*** Вот что даёт участие в клубе hero-585px***/
+
+  .evenemang__desc {
+    width: 100%;
+  }
+}
+
+
+@media (max-width: 360px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .header__desc {
+    margin-bottom: 2px;
+  }
+
+  .header__samokatImg {
+    top: 0;
+    margin-left: 0;
+    width: 100%;
+    height: 280px;
+  }
+}  
+
+
+
+
+
+
+
+
+
